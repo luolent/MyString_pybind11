@@ -12,7 +12,11 @@ public:
         _input = new char[_size];
         std::strcpy(_input, input);
     }
-    
+
+    ~MyString() {
+        delete[] _input;
+    }
+
     size_t length() { return _size; }
     
     std::string slice(uint start, uint end, int step) {
